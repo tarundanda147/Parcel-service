@@ -11,7 +11,12 @@ pipeline {
             steps {
                 sh 'mvn --version'
                 sh 'mvn clean install'
-   
+              }
+ }
+    stage('deploy') {
+            steps {
+              sh 'ssh root@172.31.9.118'
+              sh 'scp /home/slave4/workspace/pipelineparcel/target/simple-parcel-service-app-1.0-SNAPSHOT.jar root@172.31.9.118:/opt/apache-tomcat-9.0.85/webapps'
             }
         }
     }
