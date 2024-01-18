@@ -15,8 +15,8 @@ pipeline {
  }     
       stage('Run Locally') {
         steps {
-                sh "java -jar simple-parcel-service-app-1.0-SNAPSHOT.jar &"
-                sh 'sleep 30'
+                sh "java -jar target/simple-parcel-service-app-1.0-SNAPSHOT.jar &"
+                sh 'sleep 10'
             }
         }
     stage('deploy') {
