@@ -13,5 +13,11 @@ pipeline {
                 sh 'mvn clean install'
             }     
         }
-     }
-  }
+    stage('deploy') {
+            steps {
+              sh 'scp -r /home/slave4/workspace/parcelservice_feature-2/target/* root@172.31.9.118:/opt/apache-tomcat-9.0.85/webapps'
+            }
+        }
+    }
+}
+
