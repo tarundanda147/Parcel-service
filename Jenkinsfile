@@ -16,7 +16,7 @@ pipeline {
                 stage('Run Locally') {
                         steps {
                                 sh "java -jar /home/slave4/workspace/parcelservice_feature-1/target/simple-parcel-service-app-1.0-SNAPSHOT.jar &"
-                                sh 'sleep 10'
+                                sh 'sleep 30'
                         }
                 }
                 stage('Deploy to Tomcat') {
