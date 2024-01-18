@@ -19,8 +19,6 @@ pipeline {
                 sh 'sleep 30'
             }
         }
-    
-    stage
     stage('deploy') {
             steps {
               sh 'ssh root@172.31.9.118'
